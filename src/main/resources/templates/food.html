@@ -1,0 +1,91 @@
+{{>layout/header}}
+
+<br>
+<br>
+
+
+
+<div class="form-group">
+    <label for="foodName" class="mb-2 mr-sm-2">식품 이름 입력</label>
+    <input type="text" class="form-control mb-2 mr-sm-2" id="foodName" placeholder="식품 이름을 입력 하세요" name="foodName">
+</div>
+<div class="form-group">
+    <label for="quantity" class="mb-2 mr-sm-2">식품 수량 입력</label>
+    <input type="text" class="form-control mb-2 mr-sm-2" id="quantity" placeholder="식품 수량을 입력 하세요">
+</div>
+<div class="form-group">
+    <label for="expDate" class="mb-2 mr-sm-2">식품 유통기한 입력</label>
+    <input type="text" class="form-control mb-2 mr-sm-2" id="expDate" placeholder="식품 유통기한을 입력 하세요">
+</div>
+<button type="button" id="saveBtn" class="btn btn-primary mb-2">식품 추가</button>
+<br><br>
+<br>
+<h5>현재 냉장고 식품 리스트</h5>
+<!--   메뉴들이 쭉 출력 되면 되겠죠 -->
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <th>번호</th>
+        <th>식품명</th>
+        <th>수량</th>
+        <th>유통기한</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{ #foodlist }}
+    <tr style="cursor:pointer" onclick="modal_show('{{ id }}', '{{ foodName }}', '{{ quantity }}', '{{ expDate }}')">
+        <td>{{ id }}</td>
+        <td>{{ foodName }}</td>
+        <td>{{ quantity }}</td>
+        <td>{{ expDate }}</td>
+    </tr>
+    {{ /foodlist }}
+    </tbody>
+</table>
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">식품 리스트 수정</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="food" class="mb-2 mr-sm-2">식품 번호</label>
+                    <input type="text" class="form-control mb-2 mr-sm-2" id="m_id" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="food" class="mb-2 mr-sm-2">식품 이름</label>
+                    <input type="text" class="form-control mb-2 mr-sm-2" id="m_foodName">
+                </div>
+                <div class="form-group">
+                    <label for="food" class="mb-2 mr-sm-2">식품 수량</label>
+                    <input type="text" class="form-control mb-2 mr-sm-2" id="m_quantity">
+                </div>
+                <div class="form-group">
+                    <label for="food" class="mb-2 mr-sm-2">식품 유통기한</label>
+                    <input type="text" class="form-control mb-2 mr-sm-2" id="m_expDate">
+                </div>
+
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">취소</button>
+                <button type="button" id="updateBtn" class="btn btn-primary">수정</button>
+                <button type="button" id="delBtn" class="btn btn-danger">삭제</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- The Modal -->
+
+<script src="/js/food.js"></script>
+{{>layout/footer}}
