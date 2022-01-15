@@ -18,7 +18,7 @@ public class RecipeController {
     @GetMapping("/recipe")
     public String recipe(Model model) {
         model.addAttribute("recipelist", foodService.findAll());
-        return "market";
+        return "recipe";
     }
 
 }
