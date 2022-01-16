@@ -2,29 +2,29 @@
 
 <br>
 <br>
-
-
-
-<div class="form-group">
+<div class="form-group" style = "padding: 2px 30px 2px 30px;">
     <label for="foodName" class="mb-2 mr-sm-2">식품 이름 입력</label>
     <input type="text" class="form-control mb-2 mr-sm-2" id="foodName" placeholder="식품 이름을 입력 하세요" name="foodName">
 </div>
-<div class="form-group">
+<div class="form-group" style = "padding: 2px 30px 2px 30px;">
     <label for="quantity" class="mb-2 mr-sm-2">식품 수량 입력</label>
     <input type="text" class="form-control mb-2 mr-sm-2" id="quantity" placeholder="식품 수량을 입력 하세요">
 </div>
-<div class="form-group">
+<div class="form-group" style = "padding: 2px 30px 2px 30px;">
     <label for="expDate" class="mb-2 mr-sm-2">식품 유통기한 입력</label>
     <input type="text" class="form-control mb-2 mr-sm-2" id="expDate" placeholder="식품 유통기한을 입력 하세요">
 </div>
-<button type="button" id="saveBtn" class="btn btn-primary mb-2">식품 추가</button>
+
+<div style = "padding: 2px 30px 2px 30px;">
+<button type="button" id="saveBtn" class="btn btn-primary mb-2" >식품 추가</button>
 <br><br>
 <br>
 <h5>현재 냉장고 식품 리스트</h5>
-<table class="table table-hover">
+<p>Tip.1 리스트 상위의 제목을 클릭해서 정렬 기준을 바꿀 수 있어요! <br> Tip.2 리스트에 등록된 항목을 클릭하면 내용을 수정하거나 삭제할 수 있어요!</p>
+<table id = "foodDbTable" class="table table-hover" style="cursor:pointer">
     <thead>
     <tr>
-        <th>번호</th>
+        <th>번호<img src="/resources/images/sort--v.png"></th>
         <th>식품명</th>
         <th>수량</th>
         <th>유통기한</th>
@@ -41,6 +41,7 @@
     {{ /foodlist }}
     </tbody>
 </table>
+</div>
 <br>
 <br>
 <br>

@@ -3,7 +3,6 @@ package com.fridgeproject.fridgemanager1.service;
 
 
 import java.util.List;
-import java.util.Random;
 import java.util.stream.Collectors;
 
 
@@ -52,5 +51,5 @@ public class FoodService {
         foodRepository.delete(food);
     }
 
-
+    
 }
