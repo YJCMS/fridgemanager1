@@ -15,13 +15,13 @@ public class Recipe {
     public static List<RecipeDto> getRecipeList() {
         System.out.println("레시피 100 출력");
         List<RecipeDto> list = new ArrayList<RecipeDto>();
-        String URL = "https://www.melon.com/chart/index.htm";
+        String URL = "https://www.10000recipe.com/ranking/home_new.html";
 
         try {
             Document doc = Jsoup.connect(URL).get();
 
-            Elements title = doc.select("div.ellipsis.rank01 > span > a");
-            Elements link = doc.select("div.ellipsis.rank02 > span");
+            Elements title = doc.select("div.common_sp_caption_tit.line2");
+            Elements link = doc.select("div.common_caption_rv_name > a");
 
             int rank = 0;
             // 임시 리스트
@@ -31,7 +31,7 @@ public class Recipe {
                 tmpList.add(e.text());
             }
             for (Element e : title) {
-                // System.out.println(e.text());
+                //System.out.println(e.text());
                 RecipeDto dto = new RecipeDto();
                 dto.setRank(rank + 1);
                 dto.setTitle(e.text());
