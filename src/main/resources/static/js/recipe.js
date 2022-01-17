@@ -8,7 +8,7 @@ $(document).ready(function() {
             html += "<tr>";
             html += "<td>" + field.rank + "</td>";
 //            html += "<td>" + field.rank + "</td>";
-            html += "<td><img src='" + field.img + "'></td>";
+            html += "<td><img src='" + field.img + "' style = 'width:50%'></td>";
             html +=  "<td onClick=window.open('" + field.link + "')>" + field.title + "</td>";
             //html += "<td>" + field.link + "</td>";
             html += "</tr>";

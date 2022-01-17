@@ -29,7 +29,7 @@ public class Recipe {
                 dto.setRank(rank++);
                 dto.setTitle(e.text());
                 dto.setLink("https://www.10000recipe.com" + e.select("a").attr("href"));
-                dto.setImg(e.select("img").attr("src"));
+                dto.setImg(e.select("img[src$=.jpg]").first().attr("src"));
                 list.add(dto);
 
 
