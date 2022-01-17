@@ -7,7 +7,7 @@ import lombok.Setter;
 @Getter
 public class RecipeDto {
     private int rank;
-    private String img;
     private String title;
     private String link;
+    private String img;
 }
