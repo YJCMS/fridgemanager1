@@ -19,9 +19,13 @@ public class Recipe {
 
         try {
             Document doc = Jsoup.connect(URL).get();
+            // 크롤링이 어렵습니다. 이미지도 가져오고 싶은데 어떻게 해야할까요?
 
+            Elements img = doc.select("");
             Elements title = doc.select("div.common_sp_caption_tit.line2");
-            Elements link = doc.select("div.common_caption_rv_name > a");
+            Elements link = doc.select("");
+
+            //어떻게 수정해야할지 모르겠습니다...
 
             int rank = 0;
             // 임시 리스트
